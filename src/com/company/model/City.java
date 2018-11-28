@@ -75,14 +75,6 @@ public class City extends Component {
     return Objects.hash(x, y, country);
   }
 
-  int getAllCoins() {
-    int sum = 0;
-    for (Country country : currentBalance.keySet()) {
-      sum += currentBalance.get(country);
-    }
-    return sum;
-  }
-
   void withdrawCoins(CoinMap coins) {
     for (Country country : coins.keySet()) {
       moneyToWithdraw.addCoins(country, coins.get(country));

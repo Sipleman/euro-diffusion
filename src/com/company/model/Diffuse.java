@@ -27,17 +27,6 @@ public class Diffuse implements Mediator {
     matrix = new City[10][10];
   }
 
-  public void addCountry(String name, int lx, int ly, int rx, int ry) {
-    Country country = new Country(name, this);
-    for (int y = ly; y <= ry; y++) {
-      for (int x = lx; x <= rx; x++) {
-        country.addCity(x, y);
-        matrix[x][y] = country.getLast();
-      }
-    }
-    countries.put(name, country);
-  }
-
   public void addCountry(Country country) {
     country.setDialog(this);
     for (int y = country.getLy(); y <= country.getRy(); y++) {
