@@ -18,10 +18,11 @@ public class FileParser {
     Pattern pattern = Pattern.compile(isDigit);
   }
 
-  public  List<List<Country>> readAll() throws IOException {
+  public List<List<Country>> readAll() throws IOException {
     String s;
     List<List<Country>> listOfRelevantMaps = new ArrayList<>();
-    while (!(s = br.readLine()).matches("0") && s.matches(isDigit)) {
+    while ((s = br.readLine()) != null && !s.matches("0") &&
+        s.matches(isDigit)) {
       int count = Integer.parseInt(s);
       ArrayList<Country> countries = new ArrayList<>();
       for (int i = 0; i < count; i++) {
@@ -32,11 +33,15 @@ public class FileParser {
               Integer.parseInt(str[2]), Integer.parseInt(str[3]),
               Integer.parseInt(str[4]));
           countries.add(country);
-        } else throw new IllegalArgumentException();
+        } else
+          throw new IllegalArgumentException("Line does not match format");
       }
       listOfRelevantMaps.add(countries);
     }
-
+    if (s == null || s.matches("0")) {
+      throw new IllegalArgumentException(
+          "Input file does not match format.");
+    }
     return listOfRelevantMaps;
   }
 }
