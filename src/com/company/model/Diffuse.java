@@ -4,7 +4,7 @@ import com.company.model.events.CompleteEvent;
 import com.company.model.events.Event;
 import com.company.model.events.SendEvent;
 import com.company.mediator.Mediator;
-import com.company.utils.model.CoinMap;
+import com.company.utils.CoinMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,17 +25,6 @@ public class Diffuse implements Mediator {
 
   public Diffuse() {
     matrix = new City[10][10];
-  }
-
-  public void addCountry(String name, int lx, int ly, int rx, int ry) {
-    Country country = new Country(name, this);
-    for (int y = ly; y <= ry; y++) {
-      for (int x = lx; x <= rx; x++) {
-        country.addCity(x, y);
-        matrix[x][y] = country.getLast();
-      }
-    }
-    countries.put(name, country);
   }
 
   public void addCountry(Country country) {

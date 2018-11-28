@@ -1,4 +1,4 @@
-package com.company.utils.model;
+package com.company.utils;
 
 import com.company.model.Country;
 

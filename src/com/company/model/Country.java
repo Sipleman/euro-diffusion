@@ -12,6 +12,7 @@ public class Country extends Component {
   private List<City> cities = new ArrayList<>();
   private int lx, ly, rx, ry;
   private int countOfCountries = 0;
+  private int completion = 0;
 
   public int getCountOfCountries() {
     return countOfCountries;
@@ -20,8 +21,6 @@ public class Country extends Component {
   public void setCountOfCountries(int countOfCountries) {
     this.countOfCountries = countOfCountries;
   }
-
-  private int completion = 0;
 
   public int getLx() {
     return lx;
@@ -76,15 +75,6 @@ public class Country extends Component {
     this.name = name;
   }
 
-  public void sendCoins(int x, int y) {
-  }
-
-  public void computeNeighbors(City city) {
-    int x = city.getX();
-    int y = city.getY();
-
-  }
-
   public void addCity(int x, int y) {
     cities.add(new City(dialog, x, y, this));
   }
@@ -107,13 +97,6 @@ public class Country extends Component {
     }
   }
 
-  public int getAllCoins() {
-    int sum = 0;
-    for(City city: cities) {
-      sum+=city.getAllCoins();
-    }
-    return sum;
-  }
   public City getLast() {
     return cities.get(cities.size()-1);
   }

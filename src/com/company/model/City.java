@@ -3,7 +3,7 @@ package com.company.model;
 import com.company.model.events.SendEvent;
 import com.company.mediator.Component;
 import com.company.mediator.Mediator;
-import com.company.utils.model.CoinMap;
+import com.company.utils.CoinMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,14 +73,6 @@ public class City extends Component {
   @Override
   public int hashCode() {
     return Objects.hash(x, y, country);
-  }
-
-  int getAllCoins() {
-    int sum = 0;
-    for (Country country : currentBalance.keySet()) {
-      sum += currentBalance.get(country);
-    }
-    return sum;
   }
 
   void withdrawCoins(CoinMap coins) {

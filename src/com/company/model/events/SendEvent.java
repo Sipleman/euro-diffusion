@@ -1,7 +1,7 @@
 package com.company.model.events;
 
 import com.company.model.City;
-import com.company.utils.model.CoinMap;
+import com.company.utils.CoinMap;
 
 public class SendEvent extends Event{
   private City city;
