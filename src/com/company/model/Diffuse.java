@@ -4,7 +4,7 @@ import com.company.model.events.CompleteEvent;
 import com.company.model.events.Event;
 import com.company.model.events.SendEvent;
 import com.company.mediator.Mediator;
-import com.company.utils.model.CoinMap;
+import com.company.utils.CoinMap;
 
 import java.util.HashMap;
 import java.util.Map;

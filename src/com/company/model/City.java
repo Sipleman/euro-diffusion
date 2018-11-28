@@ -3,7 +3,7 @@ package com.company.model;
 import com.company.model.events.SendEvent;
 import com.company.mediator.Component;
 import com.company.mediator.Mediator;
-import com.company.utils.model.CoinMap;
+import com.company.utils.CoinMap;
 
 import java.util.ArrayList;
 import java.util.List;
