@@ -13,7 +13,4 @@ public class CompleteEvent extends Event {
     return country;
   }
 
-  public void setCountry(Country country) {
-    this.country = country;
-  }
 }
