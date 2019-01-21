@@ -27,10 +27,6 @@ public class City extends Component {
 
   private boolean isComplete = false;
 
-  public String getCountryName() {
-    return country.getName();
-  }
-
   City(Mediator dialog, int x, int y,
       Country country) {
     super(dialog);
@@ -46,33 +42,9 @@ public class City extends Component {
     return x;
   }
 
-  public void setX(int x) {
-    this.x = x;
-  }
 
   public int getY() {
     return y;
-  }
-
-  public void setY(int y) {
-    this.y = y;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
-    City city = (City) o;
-    return x == city.x &&
-        y == city.y &&
-        Objects.equals(country, city.country);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(x, y, country);
   }
 
   void withdrawCoins(CoinMap coins) {
@@ -88,7 +60,7 @@ public class City extends Component {
 
     if (!isComplete && isComplete()) {
       isComplete = true;
-      sendCompleteEvent();
+      country.onComplete();
     }
   }
 
@@ -115,9 +87,6 @@ public class City extends Component {
         new SendEvent(this, coinMapToSend, city));
   }
 
-  private void sendCompleteEvent() {
-    country.onComplete();
-  }
 
   private CoinMap getCoinMapToSend() {
     CoinMap coinMap = new CoinMap();
