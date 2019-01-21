@@ -26,15 +26,7 @@ public class SendEvent extends Event{
     return city;
   }
 
-  public void setCity(City city) {
-    this.city = city;
-  }
-
   public CoinMap getValue() {
     return value;
-  }
-
-  public void setValue(CoinMap value) {
-    this.value = value;
   }
 }

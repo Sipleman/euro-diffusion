@@ -38,7 +38,7 @@ public class FileParser {
       }
       listOfRelevantMaps.add(countries);
     }
-    if (s == null || s.matches("0")) {
+    if (s == null || !s.matches("0")) {
       throw new IllegalArgumentException(
           "Input file does not match format.");
     }

@@ -7,10 +7,6 @@ public class Component {
     this.dialog = dialog;
   }
 
-  public Mediator getDialog() {
-    return dialog;
-  }
-
   public Component() {}
 
   public void setDialog(Mediator dialog) {
