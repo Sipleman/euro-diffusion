@@ -11,6 +11,9 @@ import java.util.Map;
 
 public class Diffuse implements Mediator {
 
+  private final int MAX_GRID_X = 9;
+  private final int MAX_GRID_Y = 9;
+
   private Map<String, Country> countries = new HashMap<String, Country>();
 
   private City matrix[][];
@@ -83,7 +86,7 @@ public class Diffuse implements Mediator {
   }
 
   private boolean checkRight(int x, int y) {
-    return x != 9 && matrix[x + 1][y] != null;
+    return x != MAX_GRID_X && matrix[x + 1][y] != null;
   }
 
   private boolean checkHigh(int x, int y) {
@@ -91,7 +94,7 @@ public class Diffuse implements Mediator {
   }
 
   private boolean checkDown(int x, int y) {
-    return y != 9 && matrix[x][y + 1] != null;
+    return y != MAX_GRID_Y && matrix[x][y + 1] != null;
   }
 
   @Override
